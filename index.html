@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="login-input">Email or Phone:</label>
+            <input type="text" id="login-input" name="loginInput" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+    
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="signup-input">Email or Phone:</label>
+            <input type="text" id="signup-input" name="signupInput" required>
+            
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="signupPassword" required>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const loginInput = document.getElementById("login-input").value;
+            const password = document.getElementById("password").value;
+            
+            // Perform login validation here
+            
+            // Example: Check if loginInput is a valid email
+            const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(loginInput);
+            
+            if (isEmail) {
+                // Handle email login
+            } else {
+                // Handle phone login
+            }
+        });
+
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const signupInput = document.getElementById("signup-input").value;
+            const signupPassword = document.getElementById("signup-password").value;
+            
+            // Perform signup process here
+            
+            // Example: Check if signupInput is a valid email
+            const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(signupInput);
+            
+            if (isEmail) {
+                // Handle email signup
+            } else {
+                // Handle phone signup
+            }
+        });
+    </script>
+</body>
+</html>
